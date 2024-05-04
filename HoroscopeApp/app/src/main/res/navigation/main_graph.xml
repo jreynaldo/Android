@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/horoscopeFragment">
+
+    <fragment
+        android:id="@+id/palminstryFragment"
+        android:name="com.reynaldo.horoscapp.ui.palmistry.PalminstryFragment"
+        android:label="fragment_palminstry"
+        tools:layout="@layout/fragment_palminstry" />
+    <fragment
+        android:id="@+id/luckFragment"
+        android:name="com.reynaldo.horoscapp.ui.luck.LuckFragment"
+        android:label="fragment_luck"
+        tools:layout="@layout/fragment_luck" />
+    <fragment
+        android:id="@+id/horoscopeFragment"
+        android:name="com.reynaldo.horoscapp.ui.horoscope.HoroscopeFragment"
+        android:label="fragment_horoscope"
+        tools:layout="@layout/fragment_horoscope" >
+        <action
+            android:id="@+id/action_horoscopeFragment_to_horoscopeDetailActivity"
+            app:destination="@id/horoscopeDetailActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/horoscopeDetailActivity"
+        android:name="com.reynaldo.horoscapp.ui.detail.HoroscopeDetailActivity"
+        android:label="HoroscopeDetailActivity" >
+        <argument
+            android:name="type"
+            app:argType="com.reynaldo.horoscapp.domain.model.HoroscopeModel" />
+    </activity>
+</navigation>
